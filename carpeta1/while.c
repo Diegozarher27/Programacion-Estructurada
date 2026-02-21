@@ -11,6 +11,4 @@ int main()
         printf("%d\n", suma);
         scanf("%d", &x);
     }
-}if (calificacion > 100){
-            printf("eh we no se puede poner numeros mayores a 100\n");
-        }
+}
