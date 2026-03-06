@@ -1,11 +1,6 @@
 #include <stdio.h>
 
 int main(){
-   // float temp [24];
-    //int i;
-   // for (i = 0; i < 24; i++){
-       // printf("%.1f", temp[i]);
-   // }
     int opcion;
     int repetir;
     int n;
@@ -26,3 +21,4 @@ int main(){
     }while (opcion == 2);
 
 }
+
