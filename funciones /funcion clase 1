@@ -1,0 +1,63 @@
+#include <stdio.h>
+
+void Capturar (int v[], int n){
+    int i;
+    for (i=0;i<n;i++){
+        printf("Dame un numero: ");
+        scanf("%d",&v[i]);
+    }
+}
+
+void mostrar(int d[], int s ){
+    int i;
+    printf("(");
+    for (i=0;i<s;i++){
+        printf(" %d ", d[i]);
+    }
+    printf(")\n");
+}
+
+int filtrar (int a[], int b[], int e){
+    int i;
+    int h = 0;
+    for (i=0;i<e;i++){
+        if(a[i] % 2 != 0){
+            b[h] = a[i];
+            h++;
+        }
+    }
+    return h;
+}
+
+int main(){
+    int m;
+    printf("¿Cuantos valores quieres?: ");
+    scanf("%d",&m);
+
+    int lista1[m];
+    int lista2[m];
+
+    Capturar(lista1, m);
+    mostrar(lista1, m);
+
+    int cantidad = filtrar(lista1, lista2, m);
+
+    printf("Impares:\n");
+    mostrar(lista2, cantidad);
+
+    FILE *f = fopen("resultado.txt","w");
+
+    if (f == NULL){
+        printf("Error al abrir el archivo.\n");
+        return 1;
+    }
+
+    int i;
+    for (i = 0; i < cantidad; i++){
+        fprintf(f, "%d ", lista2[i]);
+    }
+
+    fclose(f);
+
+    return 0;
+}
